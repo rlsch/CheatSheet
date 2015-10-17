@@ -1,0 +1,2 @@
+$ sudo gem install -n /usr/local/bin cocoapods
+($ sudo chmod +rx /usr/local/bin/)

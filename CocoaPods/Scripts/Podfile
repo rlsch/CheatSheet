@@ -1,0 +1,7 @@
+platform :ios, "7.0"
+source 'https://github.com/CocoaPods/Specs.git'
+
+target "MyApp" do
+  pod 'OpenCV', '2.4.9'
+  pod 'CocoaLumberjack', '~> 2.0'
+end
