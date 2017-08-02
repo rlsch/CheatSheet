@@ -1,0 +1,203 @@
+% Original Document:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Code Snippet
+% LaTeX Template
+% Version 1.0 (14/2/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Velimir Gayevskiy (vel@latextemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%
+%  Created by Robert Lösch on 31.07.17.
+%  Copyright (c) 2017 Robert Lösch. All rights reserved.
+%%
+\documentclass[a4paper, twocolumn]{article}
+
+%----------------------------------------------------------------------------------------
+
+\usepackage{listings} % Required for inserting code snippets
+\usepackage[usenames,dvipsnames]{color} % Required for specifying custom colors and referring to colors by name
+
+\definecolor{DarkGreen}{rgb}{0.0,0.4,0.0} % Comment color
+\definecolor{highlight}{RGB}{255,251,204} % Code highlight color
+
+\usepackage[hidelinks]{hyperref} %http://ctan.org/pkg/hyperref
+
+\lstdefinestyle{Style1}{ % Define a style for your code snippet, multiple definitions can be made if, for example, you wish to insert multiple code snippets using different programming languages into one document
+language=Java, % Detects keywords, comments, strings, functions, etc for the language specified
+backgroundcolor=\color{highlight}, % Set the background color for the snippet - useful for highlighting
+basicstyle=\footnotesize\ttfamily, % The default font size and style of the code
+breakatwhitespace=false, % If true, only allows line breaks at white space
+breaklines=true, % Automatic line breaking (prevents code from protruding outside the box)
+captionpos=b, % Sets the caption position: b for bottom; t for top
+commentstyle=\usefont{T1}{pcr}{m}{sl}\color{DarkGreen}, % Style of comments within the code - dark green courier font
+deletekeywords={}, % If you want to delete any keywords from the current language separate them by commas
+%escapeinside={\%}, % This allows you to escape to LaTeX using the character in the bracket
+firstnumber=1, % Line numbers begin at line 1
+frame=single, % Frame around the code box, value can be: none, leftline, topline, bottomline, lines, single, shadowbox
+frameround=tttt, % Rounds the corners of the frame for the top left, top right, bottom left and bottom right positions
+keywordstyle=\color{Blue}\bf, % Functions are bold and blue
+morekeywords={do, end}, % Add any functions no included by default here separated by commas
+numbers=left, % Location of line numbers, can take the values of: none, left, right
+numbersep=10pt, % Distance of line numbers from the code box
+numberstyle=\tiny\color{Gray}, % Style used for line numbers
+rulecolor=\color{black}, % Frame border color
+showstringspaces=false, % Don't put marks in string spaces
+showtabs=false, % Display tabs in the code as lines
+stepnumber=5, % The step distance between line numbers, i.e. how often will lines be numbered
+stringstyle=\color{Purple}, % Strings are purple
+tabsize=2, % Number of spaces per tab in the code
+}
+\lstdefinestyle{Style2}{ % Define a style for your code snippet, multiple definitions can be made if, for example, you wish to insert multiple code snippets using different programming languages into one document
+	language=SHELXL, % Detects keywords, comments, strings, functions, etc for the language specified
+	backgroundcolor=\color{highlight}, % Set the background color for the snippet - useful for highlighting
+	basicstyle=\footnotesize\ttfamily, % The default font size and style of the code
+	breakatwhitespace=false, % If true, only allows line breaks at white space
+	breaklines=true, % Automatic line breaking (prevents code from protruding outside the box)
+	captionpos=b, % Sets the caption position: b for bottom; t for top
+	commentstyle=\usefont{T1}{pcr}{m}{sl}\color{DarkGreen}, % Style of comments within the code - dark green courier font
+	deletekeywords={}, % If you want to delete any keywords from the current language separate them by commas
+	%escapeinside={\%}, % This allows you to escape to LaTeX using the character in the bracket
+	firstnumber=1, % Line numbers begin at line 1
+	frame=single, % Frame around the code box, value can be: none, leftline, topline, bottomline, lines, single, shadowbox
+	frameround=tttt, % Rounds the corners of the frame for the top left, top right, bottom left and bottom right positions
+	keywordstyle=\color{Blue}\bf, % Functions are bold and blue
+	morekeywords={}, % Add any functions no included by default here separated by commas
+	numbers=left, % Location of line numbers, can take the values of: none, left, right
+	numbersep=10pt, % Distance of line numbers from the code box
+	numberstyle=\tiny\color{Gray}, % Style used for line numbers
+	rulecolor=\color{black}, % Frame border color
+	showstringspaces=false, % Don't put marks in string spaces
+	showtabs=false, % Display tabs in the code as lines
+	stepnumber=5, % The step distance between line numbers, i.e. how often will lines be numbered
+	stringstyle=\color{Purple}, % Strings are purple
+	tabsize=2, % Number of spaces per tab in the code
+}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=10mm,
+	top=10mm,
+}
+
+% Create a command to cleanly insert a snippet with the style above anywhere in the document
+\newcommand{\insertcode}[2]{\begin{itemize}\item[]\lstinputlisting[caption=#2,label=#1,style=Style1]{#1}\end{itemize}} % The first argument is the script location/filename and the second is a caption for the listing
+\newcommand{\insertshellcode}[2]{\begin{itemize}\item[]\lstinputlisting[caption=#2,label=#1,style=Style2]{#1}\end{itemize}} % The first argument is the script location/filename and the second is a caption for the listing
+
+%----------------------------------------------------------------------------------------
+\title{Git Cheat Sheet}
+
+\begin{document}
+
+\maketitle
+\section{Basics}
+Creates a new Git repository:
+\insertshellcode{Scripts/basics/git_init.txt}{} % The first argument is the script location/filename and the second is a caption for the listing
+%
+Inspects the contents of the working directory and staging area:
+\insertshellcode{Scripts/basics/git_status.txt}{}
+%
+Adds files from the working directory to the staging area:
+\insertshellcode{Scripts/basics/git_add.txt}{}
+%
+Shows the difference between the working directory and the staging area:
+\insertshellcode{Scripts/basics/git_diff.txt}{}
+%
+Permanently stores file changes from the staging area in the repository:
+\insertshellcode{Scripts/basics/git_commit.txt}{}
+%
+Shows a list of all previous commits:
+\insertshellcode{Scripts/basics/git_log.txt}{}
+
+\subsection{Undo a commit and redo}
+\insertshellcode{Scripts/basics/git_undo.txt}{}
+\begin{enumerate}
+	\item This is what you want to undo.
+	\item This leaves your working tree unchanged but undoes the commit and leaves the changes you committed unstaged (so they'll appear as "Changes not staged for commit" in git status and you'll need to add them again before committing).1
+	\item Make corrections to working tree files.
+	\item \emph{git add} anything that you want to include in your new commit.
+	\item Commit the changes, reusing the old commit message.2
+\end{enumerate}
+1 If you only want to add more changes to the previous commit, or change the commit message\footnote{Note, however, that you don't need to reset to an earlier commit if you just made a mistake in your commit message. The easier option is to git reset (to unstage any changes you've made since) and then git commit --amend, which will open your default commit message editor pre-populated with the last commit message.}, you could use git reset --soft HEAD~ instead, which is like git reset HEAD~ but leaves your existing changes staged.
+
+2 reset copied the old head to .git/ORIG\_HEAD; commit with -c ORIG\_HEAD will open an editor, which initially contains the log message from the old commit and allows you to edit it. If you do not need to edit the message, you could use the -C option.
+\url{https://stackoverflow.com/questions/927358/how-to-undo-the-last-commits-in-git}
+
+\section{Backtracking}
+\insertshellcode{Scripts/backtracking/git_show_HEAD.txt}{}
+%
+Discards changes in the working directory:
+\insertshellcode{Scripts/backtracking/git_checkout_HEAD_filename.txt}{}
+%
+Unstages file changes in the staging area:
+\insertshellcode{Scripts/backtracking/git_reset_HEAD_filename.txt}{}
+%
+Removes staged and working directory changes:
+\begin{itemize}
+\item[]
+\begin{lstlisting}[style=Style2]
+$ git reset --hard
+\end{lstlisting}
+\end{itemize}
+
+%
+Can be used to reset to a previous commit in your commit history:
+\insertshellcode{Scripts/backtracking/git_reset_SHA.txt}{}
+
+\section{Branching}
+
+Lists all a Git project's branches:
+\insertshellcode{Scripts/branch/git_branch.txt}{}
+%
+Creates a new branch:
+\insertshellcode{Scripts/branch/git_branch_branchname.txt}{}
+%
+Used to switch from one branch to another:
+\insertshellcode{Scripts/branch/git_checkout_branchname.txt}{}
+%
+Used to join file changes from one branch to another:
+\insertshellcode{Scripts/branch/git_merge_branchname.txt}{}
+%
+Deletes the branch specified:
+\insertshellcode{Scripts/branch/git_branch_-d_branchname.txt}{}
+
+\section{GIT Teamwork}
+Creates a local copy of a remote:
+\insertshellcode{Scripts/teamwork/git_clone_remote_location_clone_name.txt}{}
+%
+Lists a Git project's remotes:
+\insertshellcode{Scripts/teamwork/git_remote_-v.txt}{}
+%
+Fetches work from the remote into the local copy:
+\insertshellcode{Scripts/teamwork/git_fetch.txt}{}
+%
+Merges origin/master into your local branch:
+\insertshellcode{Scripts/teamwork/git_merge_origin_master.txt}{}
+%
+Pushes a local branch to the origin remote:
+\insertshellcode{Scripts/teamwork/git_push_origin_branch_name.txt}{}
+
+\section{Stashing}
+Saves changes internally and cleans working directory:
+\insertshellcode{Scripts/stash/git_stash.txt}{}
+%
+Outputs list of stashes:
+\insertshellcode{Scripts/stash/git_stash_list.txt}{}
+%
+Deletes all git stashes at once:
+\insertshellcode{Scripts/stash/git_stash_clear.txt}{}
+%
+Re-applies stashed changes (most recent snapshot):
+\insertshellcode{Scripts/stash/git_stash_pop.txt}{}
+
+\end{document}
