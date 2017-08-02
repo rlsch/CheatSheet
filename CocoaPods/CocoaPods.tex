@@ -115,7 +115,16 @@ First, uninstall all instances of cocopods (just to be safe and keep things clea
 \insertshellcode{"Scripts/createPodfile.txt"}{} % The first argument is the script location/filename and the second is a caption for the listing
 \url{https://guides.cocoapods.org/terminal/commands.html#pod_init}
 \subsection{and add your dependencies:}
-\insertcode{"Scripts/Podfile"}{} % The first argument is the script location/filename and the 
+\insertcode{"Scripts/Podfile"}{}
+\subsubsection{Operators}
+\begin{itemize}
+	\item \textcolor{red}{$=$ 0.1} Version 0.1.
+	\item \textcolor{red}{$>$ 0.1} Any version higher than 0.1.
+	\item \textcolor{red}{$>=$ 0.1} Version 0.1 and any higher version.
+	\item \textcolor{red}{$<$ 0.1} Any version lower than 0.1.
+	\item \textcolor{red}{$<=$ 0.1} Version 0.1 and any lower version.
+	\item \textcolor{red}{$\sim>$ 0.1.2} Version 0.1.2 and the versions up to 0.2, not including 0.2. This operator works based on the last component that you specify in your version requirement. The example is equal to \textcolor{red}{$>=$~0.1.2} combined with \textcolor{red}{$<$~0.2.0} and will always match the latest known version matching your requirements.
+\end{itemize}
 \subsection{Install}
 \insertshellcode{"Scripts/installPods.txt"}{} % The first argument is the script location/filename and the second is a caption for the listing
 \url{https://guides.cocoapods.org/terminal/commands.html#pod_install}
